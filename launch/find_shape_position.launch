@@ -1,0 +1,8 @@
+<launch>
+     <node name="shape_node" pkg="read_image_bag" type="shape_topic.py" output="screen">
+      
+    </node>
+     <node name="read_image_bag_3d_find_shape_node" pkg="read_image_bag" type="read_image_bag_3d_find_shape_node" output="screen">
+      
+    </node>
+</launch>

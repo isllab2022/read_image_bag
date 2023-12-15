@@ -1,0 +1,1 @@
+/usr/bin/g++ -g -rdynamic CMakeFiles/read_image_bag_3d_live_node.dir/src/3d_camera.cpp.o -o devel/lib/read_image_bag/read_image_bag_3d_live_node 

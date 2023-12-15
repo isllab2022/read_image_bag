@@ -1,0 +1,23 @@
+<launch>
+    <node name="orb_slam3_rgbd" pkg="orb_slam3_ros_wrapper" type="orb_slam3_ros_wrapper_rgbd" output="screen">
+        <!-- for EuRoC dataset -->
+        
+        <remap from="/camera/rgb"   to="/camera/color/image_raw"/>
+        <remap from="/camera/depth"   to="/camera/aligned_depth_to_color/image_raw"/>
+         
+        <!-- Parameters for original ORB-SLAM3 -->
+        <param name="voc_file"      type="string"   value="$(find orb_slam3_ros_wrapper)/config/ORBvoc.txt" />
+        <param name="settings_file" type="string"   value="$(find orb_slam3_ros_wrapper)/config/realsensel515.yaml" />
+        <param name="do_rectify"    type="bool"     value="false" />
+    
+        <!-- Parameters for ROS -->
+        <param name="map_frame_id"  type="string"   value="world" />
+        <param name="pose_frame_id" type="string"   value="camera" />
+    </node>
+     <node name="shape_node" pkg="read_image_bag" type="sweetpp_topic_orbslam3.py" output="screen">
+      
+    </node>
+     <node name="read_image_bag__3d_sweetpp_orbslam" pkg="read_image_bag" type="read_image_bag_3d_sweetpp_orbslam" output="screen">
+      
+    </node>
+</launch>

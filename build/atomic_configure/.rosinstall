@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/isl/catkin_ws/src/read_image_bag/build/devel/setup.sh
